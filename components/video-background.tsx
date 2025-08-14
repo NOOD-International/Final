@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
+import { getVideoByRole } from "@/lib/videoConfig"
 
 interface VideoBackgroundProps {
   videoKey?: string
@@ -19,7 +19,7 @@ interface VideoBackgroundProps {
 
 export function VideoBackground({
   videoKey,
-  role,
+  role = "hero",
   overlay = "dark",
   className = "",
   autoPlay = true,
@@ -29,9 +29,8 @@ export function VideoBackground({
   children,
 }: VideoBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
-  const [videosLoaded, setVideosLoaded] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoLoaded, setVideoLoaded] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -44,62 +43,36 @@ export function VideoBackground({
     restDelta: 0.001,
   })
 
-  const videoSequence = [
-    { id: "dark-illusion", src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dark-illusion.webm-UoUddLZHa5k6IIrTq85aL0CcFqzkz1.mov", overlay: 40 },
-    { id: "illusion-flow", src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/illusion-flow.webm-8oQgKYegVgnqf89fO4NNBje7bbarKJ.mp4", overlay: 35 },
-    { id: "metallic-stripes", src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/metallic-stripes.webm-Api5SSbAvoXIz340N879rXbmthpJbv.mp4", overlay: 45 },
-    { id: "geometric-bg", src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/geometric-bg.webm-LZw9KZZ9hRVwLeY4ujRPeirZ53vBZx.mp4", overlay: 40 },
-  ]
-
-  const totalVideos = videoSequence.length
-
-  const videoIndex = useTransform(smoothProgress, [0, 1], [0, totalVideos - 0.001])
-
   const scale = useTransform(smoothProgress, [0, 0.5, 1], zoomEffect ? [1.2, 1.0, 1.2] : [1.0, 1.0, 1.0])
 
-  useEffect(() => {
-    const unsubscribe = videoIndex.onChange((latest) => {
-      const newIndex = Math.floor(latest)
-      if (newIndex !== currentVideoIndex && newIndex >= 0 && newIndex < totalVideos) {
-        setCurrentVideoIndex(newIndex)
-      }
-    })
-
-    return unsubscribe
-  }, [videoIndex, currentVideoIndex, totalVideos])
+  const videoConfig = getVideoByRole(role)
 
   useEffect(() => {
-    const loadVideos = async () => {
-      const promises = videoRefs.current.map((video) => {
-        if (video) {
-          return new Promise((resolve) => {
-            video.addEventListener("loadeddata", resolve, { once: true })
-            video.load()
+    const video = videoRef.current
+    if (video && videoConfig) {
+      const handleLoadedData = () => {
+        setVideoLoaded(true)
+        if (autoPlay) {
+          video.play().catch(() => {
+            // Silently handle autoplay failures
           })
         }
-        return Promise.resolve()
-      })
-
-      await Promise.all(promises)
-      setVideosLoaded(true)
-    }
-
-    loadVideos()
-  }, [])
-
-  useEffect(() => {
-    if (!videosLoaded) return
-
-    videoRefs.current.forEach((video, index) => {
-      if (video) {
-        if (index === currentVideoIndex) {
-          video.play().catch(() => {})
-        } else {
-          video.pause()
-        }
       }
-    })
-  }, [currentVideoIndex, videosLoaded])
+
+      const handleError = () => {
+        console.warn(`Failed to load video for role: ${role}`)
+      }
+
+      video.addEventListener("loadeddata", handleLoadedData)
+      video.addEventListener("error", handleError)
+      video.load()
+
+      return () => {
+        video.removeEventListener("loadeddata", handleLoadedData)
+        video.removeEventListener("error", handleError)
+      }
+    }
+  }, [videoConfig, autoPlay, role])
 
   const overlayClasses = {
     light: "bg-white/20",
@@ -107,40 +80,42 @@ export function VideoBackground({
     none: "",
   }
 
+  if (!videoConfig) {
+    return (
+      <div className={`relative overflow-hidden bg-black ${className}`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800" />
+        <div className="relative z-30">{children}</div>
+      </div>
+    )
+  }
+
   return (
     <div ref={containerRef} className={`relative overflow-hidden ${className}`}>
-      {/* Video Backgrounds */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        {videoSequence.map((video, index) => (
-          <motion.div
-            key={video.id}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: index === currentVideoIndex ? 1 : 0,
-              scale: index === currentVideoIndex ? scale : 1.1,
-            }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          >
-            <video
-              ref={(el) => (videoRefs.current[index] = el)}
-              className="w-full h-full object-cover"
-              autoPlay={autoPlay}
-              muted={muted}
-              loop={loop}
-              playsInline
-              preload="metadata"
-              style={{
-                filter: "brightness(0.8) contrast(1.1) saturate(0.9)",
-              }}
-            >
-              <source src={video.src} type="video/mp4" />
-            </video>
-          </motion.div>
-        ))}
+        <motion.video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          autoPlay={autoPlay}
+          muted={muted}
+          loop={loop}
+          playsInline
+          preload="metadata"
+          style={{
+            filter: "brightness(0.8) contrast(1.1) saturate(0.9)",
+            scale: scale,
+          }}
+        >
+          <source src={videoConfig.src} type="video/mp4" />
+        </motion.video>
 
         {/* Overlay */}
-        {overlay !== "none" && <div className={`absolute inset-0 ${overlayClasses[overlay]} z-10`} />}
+        {overlay !== "none" && (
+          <div
+            className={`absolute inset-0 ${overlayClasses[overlay]} z-10`}
+            style={{ opacity: videoConfig.overlay / 100 }}
+          />
+        )}
 
         {/* Metallic gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-20" />
