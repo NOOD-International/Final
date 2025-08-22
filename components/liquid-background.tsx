@@ -32,10 +32,10 @@ export function LiquidBackground({ variant = "aurora", intensity = 0.6, classNam
 
       // Create metallic aurora effect
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
-      gradient.addColorStop(0, `rgba(156, 163, 175, ${0.1 * intensity})`)
-      gradient.addColorStop(0.3, `rgba(107, 114, 128, ${0.15 * intensity})`)
-      gradient.addColorStop(0.6, `rgba(75, 85, 99, ${0.1 * intensity})`)
-      gradient.addColorStop(1, `rgba(31, 41, 55, ${0.05 * intensity})`)
+      gradient.addColorStop(0, `rgba(156, 163, 175, ${0.15 * intensity})`)
+      gradient.addColorStop(0.3, `rgba(107, 114, 128, ${0.2 * intensity})`)
+      gradient.addColorStop(0.6, `rgba(75, 85, 99, ${0.15 * intensity})`)
+      gradient.addColorStop(1, `rgba(31, 41, 55, ${0.08 * intensity})`)
 
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -58,8 +58,8 @@ export function LiquidBackground({ variant = "aurora", intensity = 0.6, classNam
         ctx.closePath()
 
         const waveGradient = ctx.createLinearGradient(0, 0, 0, canvas.height)
-        waveGradient.addColorStop(0, `rgba(148, 163, 184, ${0.05 * intensity})`)
-        waveGradient.addColorStop(1, `rgba(71, 85, 105, ${0.02 * intensity})`)
+        waveGradient.addColorStop(0, `rgba(148, 163, 184, ${0.08 * intensity})`)
+        waveGradient.addColorStop(1, `rgba(71, 85, 105, ${0.04 * intensity})`)
 
         ctx.fillStyle = waveGradient
         ctx.fill()

@@ -75,8 +75,8 @@ export function VideoBackground({
   }, [videoConfig, autoPlay, role])
 
   const overlayClasses = {
-    light: "bg-white/20",
-    dark: "bg-black/40",
+    light: "bg-white/10",
+    dark: "bg-black/20",
     none: "",
   }
 
@@ -102,7 +102,7 @@ export function VideoBackground({
           playsInline
           preload="metadata"
           style={{
-            filter: "brightness(0.8) contrast(1.1) saturate(0.9)",
+            filter: "brightness(1.2) contrast(1.1) saturate(0.9)",
             scale: scale,
           }}
         >
@@ -113,12 +113,12 @@ export function VideoBackground({
         {overlay !== "none" && (
           <div
             className={`absolute inset-0 ${overlayClasses[overlay]} z-10`}
-            style={{ opacity: videoConfig.overlay / 100 }}
+            style={{ opacity: videoConfig.overlay / 200 }}
           />
         )}
 
         {/* Metallic gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 z-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 z-20" />
       </div>
 
       {/* Content */}

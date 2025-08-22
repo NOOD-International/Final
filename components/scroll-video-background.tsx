@@ -92,7 +92,7 @@ export function ScrollVideoBackground({ onCityChange }: ScrollVideoBackgroundPro
         playsInline
         preload="auto"
         style={{
-          filter: "brightness(0.7) contrast(1.2) saturate(1.3)",
+          filter: "brightness(1.3) contrast(1.2) saturate(1.3)",
         }}
       >
         <source src="/videos/cloud-transition.mp4" type="video/mp4" />
@@ -100,7 +100,7 @@ export function ScrollVideoBackground({ onCityChange }: ScrollVideoBackgroundPro
       </video>
 
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30 pointer-events-none" />
 
       {/* City progress indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">

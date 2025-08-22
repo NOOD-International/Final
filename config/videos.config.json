@@ -1,14 +1,14 @@
 {
   "defaults": {
-    "overlay": 55,
+    "overlay": 25,
     "poster": "",
     "type": "video/mp4"
   },
   "sequence": [
     {
       "id": "video1",
-      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dark-illusion.webm-UoUddLZHa5k6IIrTq85aL0CcFqzkz1.mov",
-      "overlay": 50,
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/copy_A6E2242C-B16A-4FD8-9E38-CBF387C556F5.mov-qxuUHHgGz0VFK4khzSLqILTomgbuYU.mp4",
+      "overlay": 20,
       "duration": 25
     },
     {
@@ -32,8 +32,8 @@
   ],
   "roles": {
     "hero": {
-      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dark-illusion.webm-UoUddLZHa5k6IIrTq85aL0CcFqzkz1.mov",
-      "overlay": 60,
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/copy_A6E2242C-B16A-4FD8-9E38-CBF387C556F5.mov-qxuUHHgGz0VFK4khzSLqILTomgbuYU.mp4",
+      "overlay": 20,
       "poster": "",
       "type": "video/mp4"
     },
