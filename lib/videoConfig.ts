@@ -52,7 +52,7 @@ export function getVideoConfig(videoKey: string): VideoConfig | null {
 }
 
 export function getVideoSequence(): VideoConfig[] {
-  return videoConfig.sequence
+  return videoConfig.sequence || []
 }
 
 export function getVideoByRole(role: string): VideoRole | null {
