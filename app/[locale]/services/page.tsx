@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { FluidNavigation } from "@/components/fluid-navigation"
 import { VideoBackground } from "@/components/video-background"
 import { FluidTextReveal } from "@/components/fluid-text-reveal"
@@ -15,6 +16,8 @@ const BRAND = {
 }
 
 export default function ServicesPage() {
+  const t = useTranslations()
+  
   const services = [
     { icon: Globe,      title: "Global Portfolio",     description: "International real estate investments across premium markets" },
     { icon: TrendingUp, title: "Market Analysis",      description: "Data-driven insights for optimal investment decisions" },
@@ -31,7 +34,7 @@ export default function ServicesPage() {
       <VideoBackground role="services" className="min-h-screen">
         <section className="pt-32 pb-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <FluidTextReveal text="Our Services">
+            <FluidTextReveal text={t("services.title")}>
               <div className="text-center mb-16">
                 <motion.h1
                   className="text-4xl sm:text-6xl font-bold mb-8 leading-tight"
@@ -40,7 +43,7 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  Our Services
+                  {t("services.title")}
                 </motion.h1>
                 <motion.p
                   className="text-xl max-w-3xl mx-auto mb-12"
@@ -49,7 +52,7 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  Comprehensive real estate solutions tailored to your investment goals
+                  {t("services.subtitle")}
                 </motion.p>
               </div>
             </FluidTextReveal>

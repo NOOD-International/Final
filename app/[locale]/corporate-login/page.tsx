@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Lock, Users, Eye, EyeOff, Mail, ArrowRight, Sparkles } from "lucide-react"
 import { CodeRain } from "@/components/code-rain"
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 
 const BRAND = {
   tortoiseBlue: "var(--nood-accent)",
@@ -13,6 +14,7 @@ const BRAND = {
 }
 
 export default function CorporateLogin() {
+  const t = useTranslations()
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({

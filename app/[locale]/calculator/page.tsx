@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { FluidNavigation } from "@/components/fluid-navigation"
 import { VideoBackground } from "@/components/video-background"
 import { FluidTextReveal } from "@/components/fluid-text-reveal"
@@ -29,6 +30,7 @@ const CURRENCIES: Currency[] = [
 ]
 
 export default function CalculatorPage() {
+  const t = useTranslations()
   const [currencyCode, setCurrencyCode] = useState<Currency["code"]>("AED")
   const currentCurrency = useMemo(
     () => CURRENCIES.find((c) => c.code === currencyCode) ?? CURRENCIES[0],
@@ -67,7 +69,7 @@ export default function CalculatorPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  ROI Calculator
+                  {t("calculator.title")}
                 </motion.h1>
                 <motion.p
                   className="text-xl max-w-3xl mx-auto"
@@ -76,7 +78,7 @@ export default function CalculatorPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  Calculate your potential returns on international property investments
+                  {t("calculator.subtitle")}
                 </motion.p>
               </div>
             </FluidTextReveal>

@@ -1,0 +1,22 @@
+{
+  "brand.name": "NOOD Недвижимость",
+  "nav.services": "Услуги",
+  "nav.calculator": "Калькулятор ROI",
+  "nav.dashboard": "Панель",
+  "nav.corporateLogin": "Вход для компаний",
+  "cta.start": "Начать",
+  "cta.consult": "Бесплатная консультация",
+  "auth.welcome": "С возвращением",
+  "auth.email": "Электронная почта",
+  "auth.password": "Пароль",
+  "auth.companyCode": "Код компании (необязательно)",
+  "auth.remember": "Запомнить меня",
+  "auth.forgot": "Забыли пароль?",
+  "auth.signIn": "Войти в панель",
+  "auth.continueWith": "Или продолжить с",
+  "login.security": "Ваши данные защищены на корпоративном уровне",
+  "services.title": "Наши услуги",
+  "services.subtitle": "Комплексные решения в недвижимости под ваши цели",
+  "calculator.title": "Калькулятор ROI",
+  "calculator.subtitle": "Рассчитайте потенциальную доходность международной недвижимости"
+}

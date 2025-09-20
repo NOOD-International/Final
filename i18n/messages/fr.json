@@ -1,0 +1,22 @@
+{
+  "brand.name": "NOOD Immobilier",
+  "nav.services": "Services",
+  "nav.calculator": "Calculateur de ROI",
+  "nav.dashboard": "Tableau de bord",
+  "nav.corporateLogin": "Connexion Entreprise",
+  "cta.start": "Commencer",
+  "cta.consult": "Consultation gratuite",
+  "auth.welcome": "Bon retour",
+  "auth.email": "Adresse e-mail",
+  "auth.password": "Mot de passe",
+  "auth.companyCode": "Code entreprise (Optionnel)",
+  "auth.remember": "Se souvenir de moi",
+  "auth.forgot": "Mot de passe oublié ?",
+  "auth.signIn": "Se connecter au tableau de bord",
+  "auth.continueWith": "Ou continuer avec",
+  "login.security": "Vos données sont protégées avec une sécurité de niveau entreprise",
+  "services.title": "Nos Services",
+  "services.subtitle": "Solutions immobilières complètes, adaptées à vos objectifs",
+  "calculator.title": "Calculateur de ROI",
+  "calculator.subtitle": "Calculez vos rendements potentiels sur l'immobilier international"
+}

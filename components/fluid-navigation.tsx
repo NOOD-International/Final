@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Home, Calculator, Users, Phone, Briefcase } from "lucide-react"
 import Link from "next/link"
 import { NoodLiquidLogo } from "./nood-liquid-logo"
+import LanguageThemeToggle from "./language-theme-toggle"
+import { useLocale } from "next-intl"
 
 interface NavigationItem {
   name: string
@@ -23,6 +25,7 @@ const navigationItems: NavigationItem[] = [
 ]
 
 export function FluidNavigation() {
+  const locale = useLocale()
   const [isOpen, setIsOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
 
@@ -72,7 +75,7 @@ export function FluidNavigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <NoodLiquidLogo className="w-10 h-10" />
             <motion.span
               className="text-xl font-bold text-white"
@@ -88,7 +91,7 @@ export function FluidNavigation() {
             {navigationItems.map((item, index) => (
               <motion.div key={item.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  href={item.href}
+                  href={`/${locale}${item.href}`}
                   className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors duration-200"
                 >
                   <item.icon className="w-4 h-4" />
@@ -96,6 +99,9 @@ export function FluidNavigation() {
                 </Link>
               </motion.div>
             ))}
+            
+            {/* Language & Theme Toggle */}
+            <LanguageThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,7 +130,7 @@ export function FluidNavigation() {
               {navigationItems.map((item, index) => (
                 <motion.div key={item.name} variants={itemVariants} initial="closed" animate="open" custom={index}>
                   <Link
-                    href={item.href}
+                    href={`/${locale}${item.href}`}
                     onClick={() => setIsOpen(false)}
                     className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors duration-200 py-2"
                   >

@@ -1,0 +1,22 @@
+{
+  "brand.name": "NOOD Properties",
+  "nav.services": "Services",
+  "nav.calculator": "Calculator",
+  "nav.dashboard": "Dashboard",
+  "nav.corporateLogin": "Corporate Login",
+  "cta.start": "Get Started",
+  "cta.consult": "Free Consultation",
+  "auth.welcome": "Welcome Back",
+  "auth.email": "Email Address",
+  "auth.password": "Password",
+  "auth.companyCode": "Company Code (Optional)",
+  "auth.remember": "Remember me",
+  "auth.forgot": "Forgot password?",
+  "auth.signIn": "Sign In to Dashboard",
+  "auth.continueWith": "Or continue with",
+  "login.security": "Your data is protected with enterprise-grade security",
+  "services.title": "Our Services",
+  "services.subtitle": "Comprehensive real estate solutions tailored to your investment goals",
+  "calculator.title": "ROI Calculator",
+  "calculator.subtitle": "Calculate your potential returns on international property investments"
+}
