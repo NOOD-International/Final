@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calculator, TrendingUp, DollarSign, PieChart } from "lucide-react"
+import { Calculator, TrendingUp, DirhamSign, PieChart } from "lucide-react"
 
 export default function CalculatorLoading() {
   return (
