@@ -19,9 +19,9 @@ const featuredProjects = [
     id: 1,
     title: "Saadiyat Cultural District",
     location: "Saadiyat Island, Abu Dhabi",
-    type: "Mixed-Use Development",
-    value: "AED 850M",
-    completion: "2024",
+    type: "Residential Luxury 2bedroom Apartment",
+    value: "AED 12.5M",
+    completion: "2022",
     roi: "14%",
     image: "/saadiyat-cultural-district.png",
     description:
@@ -45,8 +45,8 @@ const featuredProjects = [
     title: "Yas Marina Residences",
     location: "Yas Island, Abu Dhabi",
     type: "Waterfront Villas",
-    value: "AED 420M",
-    completion: "2024",
+    value: "AED 4.2M",
+    completion: "2023",
     roi: "13%",
     image: "/yas-marina-residences.png",
     description: "Exclusive waterfront villas with private marina access and world-class entertainment nearby.",
@@ -134,7 +134,7 @@ export default function Portfolio() {
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/IeHfB8tn-7s?si=cfiwPuy3-TH2TSvd&autoplay=1&mute=1&loop=1&playlist=IeHfB8tn-7s&controls=1&rel=0"
-                title="NOOD Luxury Portfolio Showcase"
+                title="NOOD Portfolio "
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
