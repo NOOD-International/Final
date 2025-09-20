@@ -13,7 +13,7 @@ export default function ClienteleLoading() {
 
         <div className="space-y-4">
           <h2 className="text-2xl font-bold metallic-text">Loading Our Global Clientele</h2>
-          <p className="text-silver-400">Preparing client testimonials and success stories...</p>
+          <p className="text-silver-400">Preparing our strong Clientele...</p>
 
           <div className="flex justify-center space-x-6 pt-4">
             <div className="flex items-center space-x-2 text-emerald-400">
