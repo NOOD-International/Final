@@ -1,3 +1,4 @@
+```tsx
 "use client"
 
 import { useState, useEffect } from "react"
@@ -27,8 +28,12 @@ const navigationItems = [
     ],
   },
   {
+    name: "Process",
+    href: "/process",
+  },
+  {
     name: "Countries",
-    href: "#",
+    href: "/clientele#countries",
     submenu: [
       { name: "Abu Dhabi", href: "/abu-dhabi" },
       { name: "London", href: "/london" },
@@ -44,10 +49,6 @@ const navigationItems = [
   {
     name: "Clientele",
     href: "/clientele",
-  },
-  {
-    name: "Process",
-    href: "/process",
   },
   {
     name: "Support",
@@ -259,3 +260,4 @@ export function NavBar() {
     </nav>
   )
 }
+```
