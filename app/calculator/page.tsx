@@ -144,14 +144,4 @@ export default function CalculatorPage() {
       </VideoBackground>
     </div>
   )
-}            </FluidTextReveal>
-
-            <GlassmorphicCard>
-              <ROICalculator />
-            </GlassmorphicCard>
-          </div>
-        </section>
-      </VideoBackground>
-    </div>
-  )
 }

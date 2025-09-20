@@ -1,4 +1,3 @@
-```tsx
 "use client"
 
 import { useState, useEffect } from "react"
@@ -260,4 +259,3 @@ export function NavBar() {
     </nav>
   )
 }
-```

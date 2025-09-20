@@ -63,6 +63,7 @@ body {
 
 .cosmic-glass {
   background: rgba(147, 51, 234, 0.1);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(147, 51, 234, 0.2);
 }
@@ -97,6 +98,7 @@ body {
 /* Enhanced Glass Effects */
 .glass-surface {
   background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(147, 51, 234, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -104,6 +106,7 @@ body {
 
 .glass-card {
   background: rgba(147, 51, 234, 0.05);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(147, 51, 234, 0.15);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -144,6 +147,7 @@ body {
 .cosmic-input {
   background: rgba(147, 51, 234, 0.05);
   border: 1px solid rgba(147, 51, 234, 0.2);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -209,6 +213,7 @@ body {
 /* Card Hover Effects */
 .cosmic-card {
   background: rgba(147, 51, 234, 0.05);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(147, 51, 234, 0.15);
   transition: all 0.3s ease;
@@ -224,6 +229,7 @@ body {
 /* Navigation Enhancements */
 .cosmic-nav {
   background: rgba(15, 15, 35, 0.9);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(147, 51, 234, 0.2);
 }
