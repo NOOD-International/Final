@@ -8,8 +8,8 @@ import { CodeRain } from "@/components/code-rain"
 import Link from "next/link"
 
 const BRAND = {
-  tortoiseBlue: "#1f6f5f",
-  tortoiseBlueDark: "#185f52",
+  tortoiseBlue: "var(--nood-accent)",
+  tortoiseBlueDark: "var(--nood-accent-dark)",
 }
 
 export default function CorporateLogin() {

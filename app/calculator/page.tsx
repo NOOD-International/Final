@@ -15,7 +15,7 @@ type Currency = {
 }
 
 const BRAND = {
-  tortoiseBlue: "#1f6f5f", // NOOD tortoise-blue/green accent
+  tortoiseBlue: "var(--nood-accent)", // NOOD tortoise-blue/green accent
 }
 
 const CURRENCIES: Currency[] = [

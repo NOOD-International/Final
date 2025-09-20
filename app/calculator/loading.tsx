@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Calculator, TrendingUp, DollarSign, PieChart } from "lucide-react"
 
 const BRAND = {
-  tortoiseBlue: "#1f6f5f",
+  tortoiseBlue: "var(--nood-accent)",
 }
 
 export default function CalculatorLoading() {

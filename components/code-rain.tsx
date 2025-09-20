@@ -21,9 +21,9 @@ export function CodeRain() {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // --- Character set (unchanged logic, just a smarter pool) ---
-    // Base pool (kept from your original)
-    const baseChars = "NOOD PROPERTIES ABU DHABI LUXURY INVESTMENT REAL ESTATE 01234567890+"
+    // --- Character set with NOOD brand weighting ---
+    // Base pool with NOOD branding
+    const baseChars = "NOOD INTERNATIONAL PROPERTIES ABU DHABI LUXURY INVESTMENT REAL ESTATE 01234567890+"
     const baseArray = baseChars.split("")
 
     // Brand signals to weight into the rain

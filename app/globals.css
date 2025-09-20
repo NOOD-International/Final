@@ -18,6 +18,17 @@
   --accent: 262.1 83.3% 57.8%;
   --accent-foreground: 210 40% 98%;
   --destructive: 0 62.8% 30.6%;
+  
+  /* NOOD Brand Variables */
+  --nood-accent: #1f6f5f;
+  --nood-accent-dark: #185f52;
+  --nood-body-on-dark: rgba(232,245,242,0.85);
+  --nood-sub-on-dark: rgba(255,255,255,0.70);
+  
+  /* Currency Variables */
+  --currency-code: AED;
+  --currency-symbol: د.إ;
+  --currency-symbol-raw: AED;
   --destructive-foreground: 210 40% 98%;
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;

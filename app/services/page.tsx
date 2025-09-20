@@ -9,9 +9,9 @@ import { motion } from "framer-motion"
 
 // NOOD brand palette
 const BRAND = {
-  tortoiseBlue: "#1f6f5f",           // accent for headings/icons
-  bodyOnDark: "rgba(232,245,242,0.85)", // readable body text on dark bg
-  subOnDark: "rgba(255,255,255,0.70)",  // subdued paragraph on dark
+  tortoiseBlue: "var(--nood-accent)",           // accent for headings/icons
+  bodyOnDark: "var(--nood-body-on-dark)", // readable body text on dark bg
+  subOnDark: "var(--nood-sub-on-dark)",  // subdued paragraph on dark
 }
 
 export default function ServicesPage() {
