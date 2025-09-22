@@ -3,7 +3,7 @@
 import { useState, useRef } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { Code, Globe, Lock, Shield, Terminal, ExternalLink, X, ChevronRight, Tag, Play } from "lucide-react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Dialog } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 
 type Project = {
@@ -69,7 +69,7 @@ export function ProjectsShowcase() {
       description: "Comprehensive digital music distribution and artist management platform",
       longDescription:
         "MotionRecords is a full-service digital music platform that empowers artists with professional-grade tools for music distribution, analytics, and fan engagement. The platform streamlines the entire music release process while providing detailed insights into audience engagement, revenue optimization, and career growth opportunities for independent artists and labels.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/nood-official-logo.png",
       category: "platform",
       technologies: ["React", "Node.js", "Audio Processing", "Analytics", "Payment Systems", "API Integration"],
       link: "https://motionrecords.us",
@@ -88,7 +88,7 @@ export function ProjectsShowcase() {
       description: "Advanced glass repair and replacement management system for service businesses",
       longDescription:
         "GlassPatch is a specialized business management platform designed specifically for glass repair and replacement companies. The system provides comprehensive job management, customer relationship tools, inventory tracking, and automated scheduling to streamline operations, improve efficiency, and enhance customer satisfaction in the glass services industry.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/nood-official-logo.png",
       category: "web",
       technologies: ["React", "Node.js", "Scheduling APIs", "CRM Integration", "Mobile Apps", "GPS Tracking"],
       achievements: [
@@ -325,7 +325,7 @@ export function ProjectsShowcase() {
                   {/* Project image */}
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image || "/images/nood-official-logo.png"}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -348,7 +348,7 @@ export function ProjectsShowcase() {
                       <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300 text-primary">
                         {project.title}
                       </h3>
-                      <Badge variant="outline" className="text-xs bg-background/50">
+                      <Badge variant="default" className="text-xs bg-background/50">
                         {getCategoryName(project.category)}
                       </Badge>
                     </div>
@@ -388,31 +388,30 @@ export function ProjectsShowcase() {
       </div>
 
       {/* Project details modal */}
-      <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
-        <DialogContent className="sm:max-w-4xl bg-background/95 border border-border text-foreground max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <div className="flex items-center justify-between">
-              <DialogTitle className="text-3xl flex items-center gap-3 text-primary">
-                {selectedProject?.title}
-                <Badge variant="outline" className="text-sm">
+      <Dialog
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        title={selectedProject?.title}
+      >
+        <div className="sm:max-w-4xl bg-background/95 border border-border text-foreground max-h-[90vh] overflow-y-auto">
+          <div className="p-6">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <h3 className="text-3xl text-primary">
+                  {selectedProject?.title}
+                </h3>
+                <Badge variant="default" className="text-sm">
                   {selectedProject && getCategoryName(selectedProject.category)}
                 </Badge>
-              </DialogTitle>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="rounded-full p-2 hover:bg-muted/50 transition-colors"
-              >
-                <X className="w-6 h-6 text-muted-foreground" />
-              </button>
+              </div>
             </div>
-          </DialogHeader>
 
           {selectedProject && (
             <div className="space-y-8">
               {/* Project image */}
               <div className="relative h-64 rounded-xl overflow-hidden">
                 <img
-                  src={selectedProject.image || "/placeholder.svg"}
+                  src={selectedProject.image || "/images/nood-official-logo.png"}
                   alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />
@@ -422,9 +421,9 @@ export function ProjectsShowcase() {
               </div>
 
               {/* Description */}
-              <DialogDescription className="text-foreground text-lg leading-relaxed">
+              <p className="text-foreground text-lg leading-relaxed">
                 {selectedProject.longDescription}
-              </DialogDescription>
+              </p>
 
               {/* Technologies */}
               <div>
@@ -477,7 +476,8 @@ export function ProjectsShowcase() {
               </div>
             </div>
           )}
-        </DialogContent>
+          </div>
+        </div>
       </Dialog>
     </section>
   )

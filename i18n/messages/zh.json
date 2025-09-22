@@ -1,22 +1,36 @@
 {
-  "brand.name": "NOOD 房地产",
-  "nav.services": "服务",
-  "nav.calculator": "投资回报计算器",
-  "nav.dashboard": "控制台",
-  "nav.corporateLogin": "企业登录",
-  "cta.start": "立即开始",
-  "cta.consult": "免费咨询",
-  "auth.welcome": "欢迎回来",
-  "auth.email": "邮箱地址",
-  "auth.password": "密码",
-  "auth.companyCode": "公司代码（可选）",
-  "auth.remember": "记住我",
-  "auth.forgot": "忘记密码？",
-  "auth.signIn": "登录控制台",
-  "auth.continueWith": "或使用以下方式继续",
-  "login.security": "您的数据已通过企业级安全保护",
-  "services.title": "我们的服务",
-  "services.subtitle": "面向您投资目标的全方位房地产方案",
-  "calculator.title": "投资回报计算器",
-  "calculator.subtitle": "计算海外房地产投资的潜在回报"
+  "brand": {
+    "name": "NOOD 房地产"
+  },
+  "nav": {
+    "services": "服务",
+    "calculator": "投资回报计算器",
+    "dashboard": "控制台",
+    "corporateLogin": "企业登录"
+  },
+  "cta": {
+    "start": "立即开始",
+    "consult": "免费咨询"
+  },
+  "auth": {
+    "welcome": "欢迎回来",
+    "email": "邮箱地址",
+    "password": "密码",
+    "companyCode": "公司代码（可选）",
+    "remember": "记住我",
+    "forgot": "忘记密码？",
+    "signIn": "登录控制台",
+    "continueWith": "或使用以下方式继续"
+  },
+  "login": {
+    "security": "您的数据已通过企业级安全保护"
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "面向您投资目标的全方位房地产方案"
+  },
+  "calculator": {
+    "title": "投资回报计算器",
+    "subtitle": "计算海外房地产投资的潜在回报"
+  }
 }

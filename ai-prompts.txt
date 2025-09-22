@@ -1,0 +1,105 @@
+AI PROMPTS FOR NOOD PROPERTIES WEBSITE FIXES
+===============================================
+
+PROMPT 1 - For GitHub Copilot Workspace:
+----------------------------------------
+I have a Next.js 14 project with App Router that needs these specific fixes:
+
+1. Navigation Menu Issue: The navigation menu is inconsistent across pages. Some pages have hidden nav bars inside the clientele page. I need a unified navigation that works the same on every page.
+
+2. Theme Toggle: The light/dark theme toggle is not working properly. It should persist the theme choice and apply it across all pages.
+
+3. Currency Selector: The ROI calculator has a currency selector but it doesn't actually affect the calculations. The currency changes should update the calculator results.
+
+4. Missing Component Titles: Many components are missing their titles/headings.
+
+5. i18n Issues: The project has next-intl setup but it's causing 500 errors. I need the internationalization to work properly.
+
+Current errors in terminal:
+- NextIntlClientProvider is not defined
+- Module not found: Can't resolve '@/components/ui/dialog'
+- Module not found: Can't resolve '@/components/ui/badge'
+
+Please analyze my codebase and provide working solutions for each issue. Focus on making minimal changes that don't break existing functionality.
+
+PROMPT 2 - For v0.dev:
+----------------------
+Create a working Next.js navigation component with these requirements:
+
+1. Unified Navigation Bar that works consistently across all pages
+2. Theme Toggle Button that switches between light/dark modes and persists the choice
+3. Language Selector that cycles through: English, Arabic, French, Urdu, Russian, Chinese
+4. Currency Selector that updates CSS variables and affects calculations
+5. Mobile Responsive with hamburger menu
+
+Requirements:
+- Use Next.js 14 App Router
+- Use Tailwind CSS
+- Use next-themes for theme persistence
+- Use next-intl for internationalization
+- NOOD brand colors: #1f6f5f (accent), #185f52 (accent-dark)
+- Must work with existing components without breaking them
+
+Provide the complete navigation component code that I can drop into my project.
+
+PROMPT 3 - For Claude Sonnet 4:
+-------------------------------
+I need you to fix these specific issues in my Next.js project:
+
+Problem 1: Navigation Inconsistency
+- Some pages have different navigation menus
+- Clientele page has hidden nav bars
+- Need unified navigation across all pages
+
+Problem 2: Theme Toggle Not Working
+- Light/dark theme switch doesn't persist
+- Theme changes don't apply to all components
+- Need proper theme persistence with next-themes
+
+Problem 3: Currency Selector Not Functional
+- ROI calculator has currency dropdown but doesn't affect calculations
+- Need currency changes to update calculator results
+- Should update CSS variables: --currency-code, --currency-symbol
+
+Problem 4: Missing Component Titles
+- Many components missing headings/titles
+- Need proper component structure with titles
+
+Problem 5: i18n Configuration Issues
+- NextIntlClientProvider errors
+- Missing UI components (dialog, badge)
+- Need working internationalization setup
+
+Please provide:
+1. Fixed navigation component
+2. Working theme toggle
+3. Functional currency selector
+4. Proper i18n setup
+5. Missing UI components
+
+Focus on minimal changes that fix these specific issues without breaking existing functionality.
+
+PROMPT 4 - For Replit AI:
+-------------------------
+Fix my Next.js project with these specific issues:
+
+1. Navigation Menu: Create a unified navigation that works the same on every page
+2. Theme Toggle: Fix the light/dark theme switch to work properly and persist
+3. Currency Selector: Make the ROI calculator currency selector actually affect calculations
+4. Missing Titles: Add proper component titles/headings
+5. i18n Errors: Fix NextIntlClientProvider and missing UI component errors
+
+Current errors:
+- NextIntlClientProvider is not defined
+- Can't resolve '@/components/ui/dialog'
+- Can't resolve '@/components/ui/badge'
+
+Provide working code for each component that I can copy-paste to fix these issues.
+
+INSTRUCTIONS:
+============
+1. Copy the prompt you want to use
+2. Paste it into your chosen AI platform
+3. Share the generated code with me
+4. I'll help you integrate the working solutions
+5. Test each fix before moving to the next one

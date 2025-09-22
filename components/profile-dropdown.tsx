@@ -103,6 +103,7 @@ export function ProfileDropdown() {
                 </button>
                 <button
                   onClick={() => setIsVisible(false)}
+                  title="Close profile menu"
                   className="text-gray-400 hover:text-white transition-colors p-1"
                 >
                   <X className="w-4 h-4" />

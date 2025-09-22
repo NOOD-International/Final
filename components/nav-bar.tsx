@@ -158,7 +158,7 @@ export function NavBar() {
             <LanguageSelector />
             <ThemeToggle />
             <ProfileDropdown />
-            <Button asChild size="sm" className="bg-silver-600 hover:bg-silver-700 text-white">
+            <Button asChild className="bg-silver-600 hover:bg-silver-700 text-white text-sm px-4 py-2">
               <Link href="/consultation">Get Started</Link>
             </Button>
           </div>
@@ -247,7 +247,7 @@ export function NavBar() {
                 <ThemeToggle />
                 <ProfileDropdown />
               </div>
-              <Button asChild size="sm" className="w-full bg-silver-600 hover:bg-silver-700 text-white">
+              <Button asChild className="w-full bg-silver-600 hover:bg-silver-700 text-white text-sm px-4 py-2">
                 <Link href="/consultation" onClick={closeMenu}>
                   Get Started
                 </Link>

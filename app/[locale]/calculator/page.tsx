@@ -1,9 +1,7 @@
 "use client"
 
-import { useTranslations } from "next-intl"
 import { FluidNavigation } from "@/components/fluid-navigation"
 import { VideoBackground } from "@/components/video-background"
-import { FluidTextReveal } from "@/components/fluid-text-reveal"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 import { ROICalculator } from "@/components/roi-calculator"
 import { motion } from "framer-motion"
@@ -15,9 +13,7 @@ type Currency = {
   symbol: string
 }
 
-const BRAND = {
-  tortoiseBlue: "var(--nood-accent)", // NOOD tortoise-blue/green accent
-}
+// Using CSS classes instead of inline styles
 
 const CURRENCIES: Currency[] = [
   { code: "AED", label: "AED — United Arab Emirates Dirham", symbol: "د.إ" },
@@ -30,7 +26,7 @@ const CURRENCIES: Currency[] = [
 ]
 
 export default function CalculatorPage() {
-  const t = useTranslations()
+  // const t = useTranslations("calculator")
   const [currencyCode, setCurrencyCode] = useState<Currency["code"]>("AED")
   const currentCurrency = useMemo(
     () => CURRENCIES.find((c) => c.code === currencyCode) ?? CURRENCIES[0],
@@ -60,54 +56,40 @@ export default function CalculatorPage() {
       <VideoBackground role="calculator" className="min-h-screen">
         <section className="pt-32 pb-20 px-4">
           <div className="max-w-4xl mx-auto">
-            <FluidTextReveal>
-              <div className="text-center mb-12">
+            <div className="text-center mb-12">
                 <motion.h1
-                  className="text-4xl sm:text-6xl font-bold mb-6 leading-tight"
-                  style={{ color: BRAND.tortoiseBlue }}
+                  className="text-4xl sm:text-6xl font-bold mb-6 leading-tight nood-brand-color"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  {t("calculator.title")}
+                  ROI Calculator
                 </motion.h1>
                 <motion.p
-                  className="text-xl max-w-3xl mx-auto"
-                  style={{ color: "rgba(255,255,255,0.7)" }}
+                  className="text-xl max-w-3xl mx-auto text-white/70"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  {t("calculator.subtitle")}
+                  Calculate your potential returns on international property investments
                 </motion.p>
-              </div>
-            </FluidTextReveal>
+            </div>
 
             {/* Currency Selector (no renames, no API changes) */}
             <div className="mb-6 flex items-center justify-between gap-4">
-              <label className="text-sm" style={{ color: BRAND.tortoiseBlue }}>
+              <label className="text-sm nood-brand-color">
                 Currency
               </label>
               <div className="flex items-center gap-3">
                 <span
-                  className="rounded-md px-3 py-1 text-sm border"
+                  className="rounded-md px-3 py-1 text-sm border nood-body-color nood-hover-bg nood-brand-border"
                   title={currentCurrency.label}
-                  style={{
-                    color: "#e8f5f2",
-                    backgroundColor: "rgba(31,111,95,0.15)",
-                    borderColor: "rgba(31,111,95,0.35)",
-                  }}
                 >
                   {currentCurrency.symbol} {currentCurrency.code}
                 </span>
                 <select
                   aria-label="Select currency"
-                  className="rounded-md px-3 py-2 text-sm outline-none"
-                  style={{
-                    color: "#e8f5f2",
-                    backgroundColor: "rgba(0,0,0,0.4)",
-                    border: "1px solid rgba(31,111,95,0.35)",
-                  }}
+                  className="rounded-md px-3 py-2 text-sm outline-none nood-body-color bg-black/40 nood-brand-border"
                   value={currencyCode}
                   onChange={(e) => setCurrencyCode(e.target.value as Currency["code"])}
                 >
@@ -138,7 +120,7 @@ export default function CalculatorPage() {
               </div>
             </GlassmorphicCard>
 
-            <p className="mt-4 text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="mt-4 text-xs text-white/55">
               ROI % is unit-agnostic. Currency selection updates symbols/labels globally so the math stays clean.
             </p>
           </div>

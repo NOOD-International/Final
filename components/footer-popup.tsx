@@ -75,6 +75,7 @@ export function FooterPopup() {
       <button
         onClick={() => setIsOpen(true)}
         onMouseEnter={() => setIsOpen(true)}
+        title="Open contact options"
         className="flex items-center justify-center w-12 h-12 rounded-full border border-border/50 bg-background/80 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl"
       >
         <ArrowUp className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
@@ -113,6 +114,7 @@ export function FooterPopup() {
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
+                    title="Close contact options"
                     className="p-2 rounded-full hover:bg-muted/50 transition-colors self-end md:self-start"
                   >
                     <X className="w-5 h-5" />
@@ -129,7 +131,7 @@ export function FooterPopup() {
                           <a
                             key={index}
                             href={item.href}
-                            className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1 hover:pl-2 group flex items-center"
+                            className="flex text-sm text-muted-foreground hover:text-primary transition-colors py-1 hover:pl-2 group items-center"
                           >
                             <span>{item.label}</span>
                             <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -170,7 +172,7 @@ export function FooterPopup() {
                                 <motion.a
                                   key={index}
                                   href={item.href}
-                                  className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:pl-2 flex items-center group"
+                                  className="flex text-sm text-muted-foreground hover:text-primary transition-colors py-2 hover:pl-2 items-center group"
                                   initial={{ x: -10, opacity: 0 }}
                                   animate={{ x: 0, opacity: 1 }}
                                   transition={{ delay: index * 0.05 }}

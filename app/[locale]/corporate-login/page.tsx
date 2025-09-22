@@ -6,15 +6,12 @@ import { motion } from "framer-motion"
 import { Lock, Users, Eye, EyeOff, Mail, ArrowRight, Sparkles } from "lucide-react"
 import { CodeRain } from "@/components/code-rain"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
+// import { useTranslations } from "next-intl"
 
-const BRAND = {
-  tortoiseBlue: "var(--nood-accent)",
-  tortoiseBlueDark: "var(--nood-accent-dark)",
-}
+// Using CSS classes instead of inline styles
 
 export default function CorporateLogin() {
-  const t = useTranslations()
+  // const t = useTranslations("auth")
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
@@ -65,15 +62,9 @@ export default function CorporateLogin() {
             className="flex flex-col items-center"
           >
             <img src="/images/weltivation-logo.png" alt="Weltivation" className="w-48 h-12 object-contain mb-2" />
-            <div
-              className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border"
-              style={{
-                backgroundColor: "rgba(31,111,95,0.10)",
-                borderColor: "rgba(31,111,95,0.20)",
-              }}
-            >
-              <Sparkles className="w-3 h-3" style={{ color: BRAND.tortoiseBlue }} />
-              <span className="text-xs font-medium" style={{ color: BRAND.tortoiseBlue }}>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full border nood-hover-bg nood-brand-border">
+              <Sparkles className="w-3 h-3 nood-brand-color" />
+              <span className="text-xs font-medium nood-brand-color">
                 Dashboard Access
               </span>
             </div>
@@ -90,7 +81,7 @@ export default function CorporateLogin() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h1 className="text-3xl font-bold mb-2" style={{ color: BRAND.tortoiseBlue }}>
+            <h1 className="text-3xl font-bold mb-2 nood-brand-color">
               Welcome Back
             </h1>
             <p className="text-gray-400">Sign in to access your personalized dashboard</p>
@@ -189,8 +180,7 @@ export default function CorporateLogin() {
                 </div>
                 <button
                   type="button"
-                  className="text-sm transition-colors"
-                  style={{ color: BRAND.tortoiseBlue }}
+                  className="text-sm transition-colors nood-brand-color"
                 >
                   Forgot password?
                 </button>
@@ -202,11 +192,7 @@ export default function CorporateLogin() {
                 disabled={isLoading}
                 whileHover={{ scale: isLoading ? 1 : 1.02 }}
                 whileTap={{ scale: isLoading ? 1 : 0.98 }}
-                className="w-full py-4 px-6 text-white font-medium rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg"
-                style={{
-                  backgroundImage: `linear-gradient(90deg, ${BRAND.tortoiseBlue}, ${BRAND.tortoiseBlueDark})`,
-                  opacity: isLoading ? 0.85 : 1,
-                }}
+                className={`w-full py-4 px-6 text-white font-medium rounded-2xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg nood-brand-bg ${isLoading ? 'opacity-85' : 'opacity-100'}`}
               >
                 {isLoading ? (
                   <>
@@ -252,7 +238,7 @@ export default function CorporateLogin() {
             <div className="mt-8 text-center">
               <p className="text-sm text-gray-400">
                 Don't have an account?{" "}
-                <Link href="/consultation" className="transition-colors" style={{ color: BRAND.tortoiseBlue }}>
+                <Link href="/consultation" className="transition-colors nood-brand-color">
                   Get started for free
                 </Link>
               </p>

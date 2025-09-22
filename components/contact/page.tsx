@@ -36,7 +36,7 @@ export default function ContactPage() {
       flag: "🇦🇪",
       city: "Abu Dhabi",
       address: "Al Maqam Tower, Al Maryah Island",
-      phone: "+971 56 7575 075",
+      phone: "+971 56 75 75 075",
       email: "admin@noodproperties.com",
     },
     {
@@ -44,7 +44,7 @@ export default function ContactPage() {
       flag: "🇬🇧",
       city: "London",
       address: "71-75 Shelton Street",
-      phone: "+44 20 7946 0958",
+      phone: "+44 20 4524 7923",
       email: "admin@noodproperties.com",
     },
     {
@@ -52,7 +52,7 @@ export default function ContactPage() {
       flag: "🇺🇸",
       city: "San Jose",
       address: "San Jose, CA",
-      phone: "+1 408 555 0123",
+      phone: "+1 559 514 4516",
       email: "admin@noodproperties.com",
     },
     {
@@ -170,8 +170,7 @@ export default function ContactPage() {
   ]
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/nood-international-properties-5156a136b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", label: "LinkedIn" },
     { icon: Globe, href: "https://www.noodproperties.com", label: "Website" },
     { icon: MessageSquare, href: "https://wa.me/971567575075", label: "WhatsApp" },
   ]

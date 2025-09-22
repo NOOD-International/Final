@@ -10,7 +10,7 @@ const offices = [
     country: "UAE",
     city: "Abu Dhabi",
     address: "Maqam Tower, Al Maryah Island",
-    phone: "+971 56 7575 075",
+    phone: "+971 56 75 75 075",
     email: "abudhabi@noodproperties.com",
     flag: "🇦🇪",
   },
@@ -18,7 +18,7 @@ const offices = [
     country: "UK",
     city: "London",
     address: "Canary Wharf, One Canada Square",
-    phone: "+44 20 7946 0958",
+    phone: "+44 20 4524 7923",
     email: "london@noodproperties.com",
     flag: "🇬🇧",
   },
@@ -26,7 +26,7 @@ const offices = [
     country: "USA",
     city: "San Jose",
     address: "Downtown San Jose, Tech Center",
-    phone: "+1 408 555 0123",
+    phone: "+1 559 514 4516",
     email: "sanjose@noodproperties.com",
     flag: "🇺🇸",
   },
@@ -34,7 +34,7 @@ const offices = [
     country: "Pakistan",
     city: "Islamabad",
     address: "Blue Area, Diplomatic Enclave",
-    phone: "+92 51 111 6663",
+    phone: "+92 305 962 4131",
     email: "islamabad@noodproperties.com",
     flag: "🇵🇰",
   },
@@ -49,10 +49,10 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { name: "Facebook", icon: <Facebook className="w-5 h-5" />, href: "#" },
-  { name: "Twitter", icon: <Twitter className="w-5 h-5" />, href: "#" },
-  { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "#" },
-  { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "#" },
+  { name: "Facebook", icon: <Facebook className="w-5 h-5" />, href: "https://www.facebook.com/share/1SYK2GjyMZ/?mibextid=wwXIfr" },
+  { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/nood.uae?igsh=eThtdGticHEwcnhj&utm_source=qr" },
+  { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/nood-international-properties-5156a136b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
+  { name: "X (Twitter)", icon: <Twitter className="w-5 h-5" />, href: "https://x.com/nood_ae?s=21" },
 ]
 
 export function Footer() {
@@ -84,6 +84,8 @@ export function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-gray-200 transition-colors duration-300"
                   aria-label={social.name}
                 >

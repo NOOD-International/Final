@@ -2,7 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Utility classes to replace common inline styles */
+@layer utilities {
+  .nood-brand-color {
+    color: var(--nood-accent);
+  }
+
+  .nood-brand-bg {
+    background-color: var(--nood-accent);
+  }
+
+  .nood-brand-border {
+    border-color: var(--nood-accent);
+  }
+
+  .nood-sub-color {
+    color: var(--nood-sub-on-dark);
+  }
+
+  .nood-body-color {
+    color: var(--nood-body-on-dark);
+  }
+
+  .nood-focus-ring {
+    --tw-ring-color: var(--nood-accent);
+  }
+
+  .nood-hover-bg {
+    background-color: rgba(31, 111, 95, 0.1);
+  }
+
+  .nood-hover-bg-dark {
+    background-color: rgba(31, 111, 95, 0.2);
+  }
+}
+
 :root {
+  /* Dark theme (default) */
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
   --card: 222.2 84% 4.9%;
@@ -18,17 +54,6 @@
   --accent: 262.1 83.3% 57.8%;
   --accent-foreground: 210 40% 98%;
   --destructive: 0 62.8% 30.6%;
-  
-  /* NOOD Brand Variables */
-  --nood-accent: #1f6f5f;
-  --nood-accent-dark: #185f52;
-  --nood-body-on-dark: rgba(232,245,242,0.85);
-  --nood-sub-on-dark: rgba(255,255,255,0.70);
-  
-  /* Currency Variables */
-  --currency-code: AED;
-  --currency-symbol: د.إ;
-  --currency-symbol-raw: AED;
   --destructive-foreground: 210 40% 98%;
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
@@ -39,6 +64,49 @@
   --chart-3: 30 80% 55%;
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
+  
+  /* NOOD Brand Variables - Dark Theme */
+  --nood-accent: #1f6f5f;
+  --nood-accent-dark: #185f52;
+  --nood-body-on-dark: rgba(232,245,242,0.85);
+  --nood-sub-on-dark: rgba(255,255,255,0.70);
+  --nood-body-on-light: rgba(31,111,95,0.9);
+  --nood-sub-on-light: rgba(31,111,95,0.7);
+  
+  /* Currency Variables */
+  --currency-code: AED;
+  --currency-symbol: د.إ;
+  --currency-symbol-raw: AED;
+}
+
+.light {
+  /* Light theme */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 262.1 83.3% 57.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 262.1 83.3% 57.8%;
+  /* NOOD Brand Variables - Light Theme */
+  --nood-accent: #1f6f5f;
+  --nood-accent-dark: #185f52;
+  --nood-body-on-dark: rgba(31,111,95,0.9);
+  --nood-sub-on-dark: rgba(31,111,95,0.7);
+  --nood-body-on-light: rgba(31,111,95,0.9);
+  --nood-sub-on-light: rgba(31,111,95,0.7);
 }
 
 * {
@@ -50,6 +118,12 @@ body {
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   font-feature-settings: "rlig" 1, "calt" 1;
   min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.light body {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+  color: #1a1a2e;
 }
 
 /* Cosmic Theme Classes */

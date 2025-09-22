@@ -66,6 +66,8 @@ const config: Config = {
           900: "#581c87",
           950: "#3b0764",
         },
+        "nood-accent": "#1f6f5f",
+        "nood-accent-dark": "#185f52",
       },
       borderRadius: {
         lg: "var(--radius)",

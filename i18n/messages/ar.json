@@ -1,22 +1,36 @@
 {
-  "brand.name": "نود للعقارات",
-  "nav.services": "الخدمات",
-  "nav.calculator": "حاسبة العائد",
-  "nav.dashboard": "لوحة التحكم",
-  "nav.corporateLogin": "تسجيل دخول الشركات",
-  "cta.start": "ابدأ الآن",
-  "cta.consult": "استشارة مجانية",
-  "auth.welcome": "مرحبًا بعودتك",
-  "auth.email": "البريد الإلكتروني",
-  "auth.password": "كلمة المرور",
-  "auth.companyCode": "رمز الشركة (اختياري)",
-  "auth.remember": "تذكرني",
-  "auth.forgot": "نسيت كلمة المرور؟",
-  "auth.signIn": "تسجيل الدخول للوحة التحكم",
-  "auth.continueWith": "أو تابع عبر",
-  "login.security": "بياناتك محمية بأمان على مستوى المؤسسات",
-  "services.title": "خدماتنا",
-  "services.subtitle": "حلول عقارية شاملة وفق أهدافك الاستثمارية",
-  "calculator.title": "حاسبة العائد",
-  "calculator.subtitle": "احسب عوائدك المحتملة للاستثمار العقاري الدولي"
+  "brand": {
+    "name": "نود للعقارات"
+  },
+  "nav": {
+    "services": "الخدمات",
+    "calculator": "حاسبة العائد",
+    "dashboard": "لوحة التحكم",
+    "corporateLogin": "تسجيل دخول الشركات"
+  },
+  "cta": {
+    "start": "ابدأ الآن",
+    "consult": "استشارة مجانية"
+  },
+  "auth": {
+    "welcome": "مرحبًا بعودتك",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "companyCode": "رمز الشركة (اختياري)",
+    "remember": "تذكرني",
+    "forgot": "نسيت كلمة المرور؟",
+    "signIn": "تسجيل الدخول للوحة التحكم",
+    "continueWith": "أو تابع عبر"
+  },
+  "login": {
+    "security": "بياناتك محمية بأمان على مستوى المؤسسات"
+  },
+  "services": {
+    "title": "خدماتنا",
+    "subtitle": "حلول عقارية شاملة وفق أهدافك الاستثمارية"
+  },
+  "calculator": {
+    "title": "حاسبة العائد",
+    "subtitle": "احسب عوائدك المحتملة للاستثمار العقاري الدولي"
+  }
 }

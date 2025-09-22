@@ -52,7 +52,7 @@ export default function LanguageThemeToggle() {
         }}
         title={`Switch language (current: ${locale.toUpperCase()})`}
         className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm"
-        style={{ borderColor: "rgba(31,111,95,0.35)", color: "#e8f5f2", background: "rgba(31,111,95,0.12)" }}
+        className="nood-brand-border nood-body-color nood-hover-bg"
       >
         <Globe className="w-4 h-4" />
         <span className="uppercase">{locale}</span>
@@ -64,7 +64,7 @@ export default function LanguageThemeToggle() {
         onClick={toggleTheme}
         title={`Switch to ${nextThemeLabel} mode`}
         className="inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm"
-        style={{ borderColor: "rgba(31,111,95,0.35)", color: "#e8f5f2", background: "rgba(31,111,95,0.12)" }}
+        className="nood-brand-border nood-body-color nood-hover-bg"
       >
         {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         <span>{nextThemeLabel}</span>

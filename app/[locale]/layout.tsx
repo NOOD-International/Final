@@ -2,19 +2,18 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "../globals.css"
-import { NextIntlClientProvider } from "next-intl"
-import { cookies } from "next/headers"
-import { isRTL } from "@/i18n/locales"
+// import { NextIntlClientProvider } from "next-intl"
+// import { getMessages } from "next-intl/server"
+// import { isRTL } from "@/i18n/locales"
 import { ThemeProvider } from "next-themes"
-import getMessages from "./messages"
-import LocaleSync from "@/components/locale-sync"
+// import LocaleSync from "@/components/locale-sync"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const dynamic = "force-dynamic"
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const { locale } = params
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
   
   return {
     title: "NOOD International Properties - Global Real Estate Investment",
@@ -77,11 +76,11 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
-  const { locale } = params
-  const messages = await getMessages(locale)
-  const dir = isRTL(locale) ? "rtl" : "ltr"
+  const { locale } = await params
+  // const messages = await getMessages()
+  const dir = "ltr" // isRTL(locale) ? "rtl" : "ltr"
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
@@ -89,16 +88,11 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#000000" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <LocaleSync />
-            {children}
-          </NextIntlClientProvider>
+          {children}
         </ThemeProvider>
       </body>
     </html>

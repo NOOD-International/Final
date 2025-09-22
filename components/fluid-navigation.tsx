@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Home, Calculator, Users, Phone, Briefcase } from "lucide-react"
 import Link from "next/link"
 import { NoodLiquidLogo } from "./nood-liquid-logo"
-import LanguageThemeToggle from "./language-theme-toggle"
-import { useLocale } from "next-intl"
+// import LanguageThemeToggle from "./language-theme-toggle"
+// import { useLocale } from "next-intl"
+import { SimpleThemeToggle } from "./simple-theme-toggle"
 
 interface NavigationItem {
   name: string
@@ -18,14 +19,14 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   { name: "Home", href: "/", icon: Home },
-  { name: "Calculator", href: "/calculator", icon: Calculator },
-  { name: "Clientele", href: "/clientele", icon: Users },
-  { name: "Contact", href: "/contact", icon: Phone },
   { name: "Services", href: "/services", icon: Briefcase },
+  { name: "Calculator", href: "/calculator", icon: Calculator },
+  { name: "Contact", href: "/contact", icon: Phone },
+  { name: "Clientele", href: "/clientele", icon: Users },
 ]
 
 export function FluidNavigation() {
-  const locale = useLocale()
+  const locale = "en" // useLocale()
   const [isOpen, setIsOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
 
@@ -100,8 +101,8 @@ export function FluidNavigation() {
               </motion.div>
             ))}
             
-            {/* Language & Theme Toggle */}
-            <LanguageThemeToggle />
+            {/* Theme Toggle */}
+            <SimpleThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}

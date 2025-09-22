@@ -132,7 +132,7 @@ export function Property3DSlider() {
                 >
                   <div className="relative overflow-hidden rounded-lg md:rounded-xl shadow-2xl">
                     <img
-                      src={properties[currentIndex].image || "/placeholder.svg"}
+                      src={properties[currentIndex].image || "/images/nood-official-logo.png"}
                       alt={properties[currentIndex].title}
                       className="w-full h-48 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -208,6 +208,7 @@ export function Property3DSlider() {
       {/* Navigation Controls */}
       <button
         onClick={prevSlide}
+        title="Previous property"
         className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 md:p-3 rounded-full transition-all duration-300 z-10"
       >
         <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
@@ -215,6 +216,7 @@ export function Property3DSlider() {
 
       <button
         onClick={nextSlide}
+        title="Next property"
         className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 md:p-3 rounded-full transition-all duration-300 z-10"
       >
         <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
@@ -226,6 +228,7 @@ export function Property3DSlider() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
+            title={`Go to property ${index + 1}`}
             className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
               index === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
             }`}

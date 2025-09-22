@@ -1,22 +1,36 @@
 {
-  "brand.name": "NOOD Properties",
-  "nav.services": "Services",
-  "nav.calculator": "Calculator",
-  "nav.dashboard": "Dashboard",
-  "nav.corporateLogin": "Corporate Login",
-  "cta.start": "Get Started",
-  "cta.consult": "Free Consultation",
-  "auth.welcome": "Welcome Back",
-  "auth.email": "Email Address",
-  "auth.password": "Password",
-  "auth.companyCode": "Company Code (Optional)",
-  "auth.remember": "Remember me",
-  "auth.forgot": "Forgot password?",
-  "auth.signIn": "Sign In to Dashboard",
-  "auth.continueWith": "Or continue with",
-  "login.security": "Your data is protected with enterprise-grade security",
-  "services.title": "Our Services",
-  "services.subtitle": "Comprehensive real estate solutions tailored to your investment goals",
-  "calculator.title": "ROI Calculator",
-  "calculator.subtitle": "Calculate your potential returns on international property investments"
+  "brand": {
+    "name": "NOOD Properties"
+  },
+  "nav": {
+    "services": "Services",
+    "calculator": "Calculator",
+    "dashboard": "Dashboard",
+    "corporateLogin": "Corporate Login"
+  },
+  "cta": {
+    "start": "Get Started",
+    "consult": "Free Consultation"
+  },
+  "auth": {
+    "welcome": "Welcome Back",
+    "email": "Email Address",
+    "password": "Password",
+    "companyCode": "Company Code (Optional)",
+    "remember": "Remember me",
+    "forgot": "Forgot password?",
+    "signIn": "Sign In to Dashboard",
+    "continueWith": "Or continue with"
+  },
+  "login": {
+    "security": "Your data is protected with enterprise-grade security"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive real estate solutions tailored to your investment goals"
+  },
+  "calculator": {
+    "title": "ROI Calculator",
+    "subtitle": "Calculate your potential returns on international property investments"
+  }
 }

@@ -32,26 +32,7 @@ const features = [
   },
 ]
 
-const testimonials = [
-  {
-    name: "Sarah L.",
-    title: "Software Engineer",
-    quote: "I landed my dream job after completing this program. The skills I learned were invaluable.",
-    image: "/placeholder-user.jpg",
-  },
-  {
-    name: "David M.",
-    title: "Data Scientist",
-    quote: "The mentorship and community support were exceptional. I highly recommend this platform.",
-    image: "/placeholder-user.jpg",
-  },
-  {
-    name: "Emily R.",
-    title: "UX Designer",
-    quote: "I transformed my career with this program. The curriculum is comprehensive and up-to-date.",
-    image: "/placeholder-user.jpg",
-  },
-]
+// Testimonials removed - will be added when verifiable client reviews are available
 
 export default function DashboardPage() {
   return (
@@ -138,47 +119,7 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-24 lg:py-32">
-        <div className="container">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-5xl">What Our Students Say</h2>
-          <p className="max-w-[800px] text-gray-500 mx-auto mt-4 text-center md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Don't just take our word for it. See how our courses have helped students achieve their goals.
-          </p>
-
-          <Carousel className="container mt-12">
-            <CarouselContent className="-ml-1 md:ml-0">
-              {testimonials.map((t, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-4">
-                    <Card className="border-none shadow-md">
-                      <CardHeader>
-                        <div className="flex items-center space-x-4">
-                          <Image
-                            src={t.image || "/placeholder.svg"}
-                            alt={t.name}
-                            width={48}
-                            height={48}
-                            className="h-12 w-12 rounded-full object-cover"
-                          />
-                          <div>
-                            <CardTitle>{t.name}</CardTitle>
-                            <CardDescription>{t.title}</CardDescription>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-700">{t.quote}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
-        </div>
-      </section>
+      {/* Testimonials section removed - will be added when verifiable client reviews are available */}
 
       <section className="py-12 md:py-24 lg:py-32">
         <div className="container">
