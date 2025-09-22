@@ -103,7 +103,7 @@ export function ContactForm() {
         {/* Personal Information */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+            <label className="block text-sm font-medium mb-2 nood-brand-color">
               <User className="w-4 h-4 inline mr-2" />
               Full Name *
             </label>
@@ -113,14 +113,13 @@ export function ContactForm() {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-              className="nood-brand-border nood-focus-ring"
+              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors nood-brand-border nood-focus-ring"
               placeholder="Enter your full name"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+            <label className="block text-sm font-medium mb-2 nood-brand-color">
               <Mail className="w-4 h-4 inline mr-2" />
               Email Address *
             </label>
@@ -130,8 +129,7 @@ export function ContactForm() {
               value={formData.email}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-              className="nood-brand-border nood-focus-ring"
+              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors nood-brand-border nood-focus-ring"
               placeholder="Enter your email"
             />
           </div>
@@ -139,7 +137,7 @@ export function ContactForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+            <label className="block text-sm font-medium mb-2 nood-brand-color">
               <Phone className="w-4 h-4 inline mr-2" />
               Phone Number
             </label>
@@ -148,14 +146,13 @@ export function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-              className="nood-brand-border nood-focus-ring"
+              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors nood-brand-border nood-focus-ring"
               placeholder="Enter your phone number"
             />
           </div>
           
           <div>
-            <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+            <label className="block text-sm font-medium mb-2 nood-brand-color">
               <Building className="w-4 h-4 inline mr-2" />
               Company (Optional)
             </label>
@@ -164,8 +161,7 @@ export function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-              className="nood-brand-border nood-focus-ring"
+              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors nood-brand-border nood-focus-ring"
               placeholder="Enter your company name"
             />
           </div>
@@ -174,7 +170,7 @@ export function ContactForm() {
         {/* Investment Details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+            <label className="block text-sm font-medium mb-2 nood-brand-color">
               Investment Amount
             </label>
             <select
@@ -182,8 +178,7 @@ export function ContactForm() {
               value={formData.investmentAmount}
               onChange={handleInputChange}
               title="Select your investment amount range"
-              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-              className="nood-brand-border nood-focus-ring"
+              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors nood-brand-border nood-focus-ring"
             >
               <option value="">Select investment range</option>
               {investmentAmounts.map(amount => (
@@ -195,7 +190,7 @@ export function ContactForm() {
           </div>
           
           <div>
-            <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+            <label className="block text-sm font-medium mb-2 nood-brand-color">
               Preferred Location
             </label>
             <select
@@ -203,8 +198,7 @@ export function ContactForm() {
               value={formData.preferredLocation}
               onChange={handleInputChange}
               title="Select your preferred investment location"
-              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-              className="nood-brand-border nood-focus-ring"
+              className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors nood-brand-border nood-focus-ring"
             >
               <option value="">Select preferred location</option>
               {preferredLocations.map(location => (
@@ -218,7 +212,7 @@ export function ContactForm() {
 
         {/* Message */}
         <div>
-          <label className="block text-sm font-medium mb-2" className="nood-brand-color">
+          <label className="block text-sm font-medium mb-2 nood-brand-color">
             <MessageSquare className="w-4 h-4 inline mr-2" />
             Message *
           </label>
@@ -228,11 +222,7 @@ export function ContactForm() {
             onChange={handleInputChange}
             required
             rows={5}
-            className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors resize-none"
-            style={{ 
-              borderColor: BRAND.tortoiseBlue,
-              focusRingColor: BRAND.tortoiseBlue
-            }}
+            className="w-full px-4 py-3 rounded-lg border border-opacity-20 bg-black bg-opacity-20 backdrop-blur-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors resize-none nood-brand-border nood-focus-ring"
             placeholder="Tell us about your investment goals, timeline, and any specific requirements..."
           />
         </div>

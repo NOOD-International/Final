@@ -2,11 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "../globals.css"
-// import { NextIntlClientProvider } from "next-intl"
-// import { getMessages } from "next-intl/server"
-// import { isRTL } from "@/i18n/locales"
 import { ThemeProvider } from "next-themes"
-// import LocaleSync from "@/components/locale-sync"
+import { LanguageProvider } from "@/contexts/language-context"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -92,7 +89,9 @@ export default async function LocaleLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
