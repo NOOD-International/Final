@@ -1,34 +1,57 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Home, Calculator, Users, Phone, Briefcase } from "lucide-react"
+import { Menu, X, Home, Calculator, Users, Phone, Briefcase, ChevronDown, Building2, Globe, Award } from "lucide-react"
 import Link from "next/link"
 import { NoodLiquidLogo } from "./nood-liquid-logo"
-// import LanguageThemeToggle from "./language-theme-toggle"
-// import { useLocale } from "next-intl"
 import { SimpleThemeToggle } from "./simple-theme-toggle"
+import { cn } from "@/lib/utils"
 
 interface NavigationItem {
   name: string
   href: string
   icon: React.ComponentType<any>
+  submenu?: { name: string; href: string }[]
 }
 
 const navigationItems: NavigationItem[] = [
   { name: "Home", href: "/", icon: Home },
-  { name: "Services", href: "/services", icon: Briefcase },
-  { name: "Calculator", href: "/calculator", icon: Calculator },
-  { name: "Contact", href: "/contact", icon: Phone },
+  { 
+    name: "Services", 
+    href: "/services", 
+    icon: Briefcase,
+    submenu: [
+      { name: "Property Evaluation", href: "/property-evaluation" },
+      { name: "Property Listing", href: "/property-listing" },
+      { name: "ROI Calculator", href: "/calculator" },
+      { name: "Consultation", href: "/consultation" },
+    ]
+  },
+  { name: "Process", href: "/process", icon: Building2 },
+  { 
+    name: "Countries", 
+    href: "/clientele#countries", 
+    icon: Globe,
+    submenu: [
+      { name: "Abu Dhabi", href: "/abu-dhabi" },
+      { name: "London", href: "/london" },
+      { name: "San Jose", href: "/san-jose" },
+      { name: "Pakistan", href: "/pakistan" },
+      { name: "Russia", href: "/russia" },
+    ]
+  },
+  { name: "Portfolio", href: "/portfolio", icon: Award },
   { name: "Clientele", href: "/clientele", icon: Users },
+  { name: "Contact", href: "/contact", icon: Phone },
 ]
 
 export function FluidNavigation() {
   const locale = "en" // useLocale()
   const [isOpen, setIsOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -90,14 +113,46 @@ export function FluidNavigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item, index) => (
-              <motion.div key={item.name} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <motion.div 
+                key={item.name} 
+                className="relative"
+                onMouseEnter={() => item.submenu && setActiveSubmenu(item.name)}
+                onMouseLeave={() => setActiveSubmenu(null)}
+              >
                 <Link
                   href={`/${locale}${item.href}`}
                   className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors duration-200"
                 >
                   <item.icon className="w-4 h-4" />
                   <span>{item.name}</span>
+                  {item.submenu && (
+                    <ChevronDown className={cn(
+                      "w-3 h-3 transition-transform duration-200",
+                      activeSubmenu === item.name && "rotate-180"
+                    )} />
+                  )}
                 </Link>
+                
+                {/* Submenu */}
+                {item.submenu && activeSubmenu === item.name && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-xl border border-white/10 rounded-lg shadow-xl z-50"
+                  >
+                    {item.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={`/${locale}${subItem.href}`}
+                        className="block px-4 py-3 text-white/80 hover:text-white hover:bg-white/5 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                        onClick={() => setActiveSubmenu(null)}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
               </motion.div>
             ))}
             
@@ -130,16 +185,41 @@ export function FluidNavigation() {
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item, index) => (
                 <motion.div key={item.name} variants={itemVariants} initial="closed" animate="open" custom={index}>
-                  <Link
-                    href={`/${locale}${item.href}`}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors duration-200 py-2"
-                  >
-                    <item.icon className="w-5 h-5" />
-                    <span className="text-lg">{item.name}</span>
-                  </Link>
+                  <div>
+                    <Link
+                      href={`/${locale}${item.href}`}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center space-x-3 text-white/80 hover:text-white transition-colors duration-200 py-2"
+                    >
+                      <item.icon className="w-5 h-5" />
+                      <span className="text-lg">{item.name}</span>
+                    </Link>
+                    
+                    {/* Mobile Submenu */}
+                    {item.submenu && (
+                      <div className="ml-8 mt-2 space-y-2">
+                        {item.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={`/${locale}${subItem.href}`}
+                            onClick={() => setIsOpen(false)}
+                            className="block text-white/60 hover:text-white/80 transition-colors duration-200 py-1 text-sm"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </motion.div>
               ))}
+              
+              {/* Mobile Theme Toggle */}
+              <motion.div variants={itemVariants} initial="closed" animate="open" custom={navigationItems.length}>
+                <div className="pt-4 border-t border-white/10">
+                  <SimpleThemeToggle />
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         )}

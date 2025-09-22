@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { NavBar } from "@/components/nav-bar"
+// Removed duplicate NavBar - using FluidNavigation from layout
 import { Footer } from "@/components/footer"
 import { TranslatableComponent } from "@/components/translatable-component"
 import { Building2, Users, Award, Globe, Star, MapPin, Calendar } from "lucide-react"
@@ -53,7 +53,7 @@ export default function ClientelePage() {
 
   return (
     <div className="min-h-screen bg-black text-silver-100">
-      <NavBar />
+      {/* Navigation handled by FluidNavigation in layout */}
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
